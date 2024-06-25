@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -47,6 +48,10 @@ public class EventService {
         eventRepositories.save(newEvent);
         return newEvent;
         
+    }
+
+    public List<Event> getAllEvents(){
+        return eventRepositories.findAll();
     }
 
     private String uploadImage(MultipartFile multipartFile){
